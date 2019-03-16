@@ -1,1 +1,1 @@
-# xcode-result-bundle
+# XcodeResultBundle

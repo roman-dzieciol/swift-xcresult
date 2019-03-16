@@ -1,0 +1,5 @@
+2019-03-16 22:31:09 +0000: Received worker from worker provider: 0x7fc5db738530 [0: iPhone XR (4DD0FA04-5E8B-4E2A-8B20-E099D0CF5C03)]
+2019-03-16 22:31:12 +0000: Worker 0x7fc5db738530 [29908: iPhone XR (4DD0FA04-5E8B-4E2A-8B20-E099D0CF5C03)] finished bootstrapping
+2019-03-16 22:31:12 +0000: Parallelization disabled; test execution driven by the test process
+2019-03-16 22:31:13 +0000: Worker 0x7fc5db738530 [29908: iPhone XR (4DD0FA04-5E8B-4E2A-8B20-E099D0CF5C03)] finished successfully
+2019-03-16 22:31:13 +0000: Finished executing tests (cancelled: No)
