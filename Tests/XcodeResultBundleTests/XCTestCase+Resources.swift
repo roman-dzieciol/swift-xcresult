@@ -10,10 +10,30 @@ import XCTest
 @available(OSX 10.13, *)
 extension XCTestCase {
 
+    func generateResultBundles() throws -> URL {
+
+        let bundleDirURL = urlForBundleDir()
+
+        let process = Process()
+        process.launchPath = "/usr/bin/env"
+        process.currentDirectoryURL = urlForSourceRoot().appendingPathComponent("iOSResultBundleApp")
+        process.arguments = [
+            "bash",
+            "./generateResultBundles.sh",
+            "\(bundleDirURL.path)"
+        ]
+        try process.run()
+        process.waitUntilExit()
+        return bundleDirURL
+    }
+
+
     public func diff(url: URL, with otherURL: URL) throws -> Bool {
         let process = Process()
         process.launchPath = "/usr/bin/env"
         process.arguments = [
+            "git",
+            "--no-pager",
             "diff",
             url.standardized.path,
             otherURL.standardized.path
@@ -24,10 +44,19 @@ extension XCTestCase {
     }
 }
 
-public func urlForResource(named name: String) -> URL {
+public func urlForSourceRoot() -> URL {
     return URL(fileURLWithPath: #file, isDirectory: false)
         .deletingLastPathComponent()
         .deletingLastPathComponent()
         .deletingLastPathComponent()
+}
+
+@available(OSX 10.13, *)
+public func urlForBundleDir() -> URL {
+    return Bundle.init(for: TestSummariesPlistTests.self).bundleURL.standardized.deletingLastPathComponent()
+}
+
+public func urlForResource(named name: String) -> URL {
+    return urlForSourceRoot()
         .appendingPathComponent(name)
 }

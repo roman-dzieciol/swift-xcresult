@@ -1,2 +1,0 @@
-Standard output and standard error from dev.roman.iOSResultBundleApp with process ID 29907 beginning at 22:31:07.185
-
