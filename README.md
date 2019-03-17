@@ -1,10 +1,14 @@
 # XcodeResultBundle
 
-The XcodeResultBundle Swift package contains data models that allow reading the Xcode result bundles in programmatic way.
+Helps you read the Xcode compilation & test results in programmatic, efficient and reliable way.
 
-The Xcode result bundles are directories containing detailed machine-readable results of compilation & testing.
+## What is a Result Bundle
 
-This package can be used to build custom IDE or generate detailed reports efficiently.
+The Xcode Result Bundles are directories containing detailed machine-readable results of compilation & testing.
+
+When building from Xcode, you can open a result bundle by launching tests, opening the *Report Navigator* tab, then right-clicking on a completed *Test* action and selecting *Show in Finder*.
+
+When building from commandline, you can generate a Result Bundle in custom path by specifying it using the *-resultBundlePath* option.
 
 
 ## Version numbers & Xcode compatibility
