@@ -1,10 +1,10 @@
 # XcodeResultBundle
 
-Helps you read the Xcode compilation & test results in programmatic, efficient and reliable way.
+Read the Xcode compilation & test results in programmatic, efficient and reliable way.
 
 ## What is a Result Bundle
 
-The Xcode Result Bundles are directories containing detailed machine-readable results of compilation & testing.
+The Xcode Result Bundles are directories with **.xcresult** extension containing detailed machine-readable results of compilation & testing.
 
 When building from Xcode, you can open a result bundle by launching tests, opening the *Report Navigator* tab, then right-clicking on a completed *Test* action and selecting *Show in Finder*.
 
