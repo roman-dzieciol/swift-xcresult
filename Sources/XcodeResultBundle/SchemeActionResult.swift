@@ -18,7 +18,7 @@ public final class SchemeActionResult: Codable {
     public let HasCodeCoverage: Bool
     public let LogPath: String?
     public let Status: String
-    public let TestFailureSummaries: [SchemeActionIssueSummary]?
+    public let TestFailureSummaries: [SchemeActionTestFailureIssueSummary]?
     public let TestSummaryPath: String?
     public let TestsCount: Int
     public let TestsFailedCount: Int
@@ -35,7 +35,7 @@ public final class SchemeActionResult: Codable {
         , HasCodeCoverage: Bool
         , LogPath: String?
         , Status: String
-        , TestFailureSummaries: [SchemeActionIssueSummary]?
+        , TestFailureSummaries: [SchemeActionTestFailureIssueSummary]?
         , TestSummaryPath: String?
         , TestsCount: Int
         , TestsFailedCount: Int

@@ -9,7 +9,7 @@ import Foundation
 
 public final class SchemeActionsInvocationRecord: Codable {
 
-    public let Actions: [SchemeActionRecord]
+    public let Actions: [SchemeActionRecord]?
     public let AnalyzerWarningCount: Int
     public let AnalyzerWarningSummaries: [SchemeActionIssueSummary]?
     public let ArchivePath: String?
@@ -18,7 +18,7 @@ public final class SchemeActionsInvocationRecord: Codable {
     public let ErrorSummaries: [SchemeActionIssueSummary]?
     public let FormatVersion: String
     public let Running: Bool
-    public let TestFailureSummaries: [SchemeActionIssueSummary]?
+    public let TestFailureSummaries: [SchemeActionTestFailureIssueSummary]?
     public let TestSummaryIdentifier: String? // remoteTestSummaryIdentifier
     public let TestSummaryPath: String?
     public let TestsCount: Int
@@ -28,7 +28,7 @@ public final class SchemeActionsInvocationRecord: Codable {
     public let archiveGUID: String?
 
     public init
-        ( Actions: [SchemeActionRecord]
+        ( Actions: [SchemeActionRecord]?
         , AnalyzerWarningCount: Int
         , AnalyzerWarningSummaries: [SchemeActionIssueSummary]?
         , ArchivePath: String?
@@ -37,7 +37,7 @@ public final class SchemeActionsInvocationRecord: Codable {
         , ErrorSummaries: [SchemeActionIssueSummary]?
         , FormatVersion: String
         , Running: Bool
-        , TestFailureSummaries: [SchemeActionIssueSummary]?
+        , TestFailureSummaries: [SchemeActionTestFailureIssueSummary]?
         , TestSummaryIdentifier: String?
         , TestSummaryPath: String?
         , TestsCount: Int
