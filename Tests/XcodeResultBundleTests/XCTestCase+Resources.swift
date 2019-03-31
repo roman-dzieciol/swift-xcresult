@@ -7,7 +7,7 @@
 
 import XCTest
 
-@available(OSX 10.13, *)
+
 extension XCTestCase {
 
     func generateResultBundles() throws -> URL {
@@ -51,7 +51,7 @@ public func urlForSourceRoot() -> URL {
         .deletingLastPathComponent()
 }
 
-@available(OSX 10.13, *)
+
 public func urlForBundleDir() -> URL {
     return Bundle.init(for: TestSummariesPlistTests.self).bundleURL.standardized.deletingLastPathComponent()
 }

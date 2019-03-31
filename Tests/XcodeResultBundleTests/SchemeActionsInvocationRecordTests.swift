@@ -1,7 +1,7 @@
 import XCTest
 @testable import XcodeResultBundle
 
-@available(OSX 10.13, *)
+
 final class SchemeActionsInvocationRecordTests: XCTestCase {
 
     func testCodable() throws {

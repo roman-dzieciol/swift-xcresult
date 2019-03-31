@@ -18,6 +18,7 @@ public final class SchemeActionsInvocationRecord: Codable {
     public let ErrorSummaries: [SchemeActionIssueSummary]?
     public let FormatVersion: String
     public let Running: Bool
+    public let SchemeIdentifier: EntityIdentifier?
     public let TestFailureSummaries: [SchemeActionTestFailureIssueSummary]?
     public let TestSummaryIdentifier: String? // remoteTestSummaryIdentifier
     public let TestSummaryPath: String?
@@ -37,6 +38,7 @@ public final class SchemeActionsInvocationRecord: Codable {
         , ErrorSummaries: [SchemeActionIssueSummary]?
         , FormatVersion: String
         , Running: Bool
+        , SchemeIdentifier: EntityIdentifier?
         , TestFailureSummaries: [SchemeActionTestFailureIssueSummary]?
         , TestSummaryIdentifier: String?
         , TestSummaryPath: String?
@@ -56,6 +58,7 @@ public final class SchemeActionsInvocationRecord: Codable {
         self.ErrorSummaries = ErrorSummaries
         self.FormatVersion = FormatVersion
         self.Running = Running
+        self.SchemeIdentifier = SchemeIdentifier
         self.TestFailureSummaries = TestFailureSummaries
         self.TestSummaryIdentifier = TestSummaryIdentifier
         self.TestSummaryPath = TestSummaryPath
