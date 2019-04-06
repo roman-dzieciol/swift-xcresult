@@ -9,7 +9,6 @@ import Foundation
 
 public final class SchemeActionIssueSummary: Codable {
 
-    /// DVTDocumentLocation
     public let DocumentLocationData: Data?
     public let IssueType: String
     public let Message: String

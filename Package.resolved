@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "XCActivityLog",
+        "repositoryURL": "https://github.com/roman-dzieciol/XCActivityLog.git",
+        "state": {
+          "branch": null,
+          "revision": "c84105e9fb3dd9bf529bdc2ddfa6e14143871052",
+          "version": "0.0.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

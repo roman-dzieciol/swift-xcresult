@@ -23,7 +23,7 @@ public final class SchemeActionTestSummary: Codable {
         ( ActivitySummaries: [SchemeActionTestActivitySummary]?
         , Duration: Double
         , FailureSummaries: [SchemeActionTestFailureSummary]?
-        , PerformanceMetrics:  [SchemeActionTestPerformanceMetricSummary]?
+        , PerformanceMetrics: [SchemeActionTestPerformanceMetricSummary]?
         , TestIdentifier: String
         , TestName: String
         , TestObjectClass: String
