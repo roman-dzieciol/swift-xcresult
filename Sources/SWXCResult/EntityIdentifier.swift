@@ -1,6 +1,6 @@
 //
 //  EntityIdentifier.swift
-//  XcodeResultBundle
+//  SWXCResult
 //
 //  Created by Roman Dzieciol on 4/1/19.
 //

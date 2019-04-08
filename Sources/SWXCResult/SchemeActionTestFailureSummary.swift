@@ -1,6 +1,6 @@
 //
 //  SchemeActionTestFailureSummary.swift
-//  XcodeResultBundle
+//  SWXCResult
 //
 //  Created by Roman Dzieciol on 3/17/19.
 //
