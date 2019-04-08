@@ -1,5 +1,5 @@
 import XCTest
-@testable import XcodeResultBundle
+@testable import SWXCResult
 
 
 final class SchemeActionsInvocationRecordTests: XCTestCase {

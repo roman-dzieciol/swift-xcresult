@@ -1,6 +1,6 @@
 //
 //  SchemeActionSDKRecord.swift
-//  XcodeResultBundle
+//  SWXCResult
 //
 //  Created by Roman Dzieciol on 3/16/19.
 //

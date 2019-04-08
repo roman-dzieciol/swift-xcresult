@@ -3,29 +3,36 @@
 
 import PackageDescription
 
+private struct SWXCResult {
+    static let name = "SWXCResult"
+}
+
 let package = Package(
-    name: "XcodeResultBundle",
+    name: SWXCResult.name,
     platforms: [
-        .macOS(.v10_13),
+        .macOS(.v10_14),
     ],
     products: [
         // Products define the executables and libraries produced by a package, and make them visible to other packages.
         .library(
-            name: "XcodeResultBundle",
-            targets: ["XcodeResultBundle"]),
+            name: SWXCResult.name,
+            targets: [SWXCResult.name]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
-        // .package(url: /* package url */, from: "1.0.0"),
+        .package(url: "git@github.com:roman-dzieciol/swift-xcactivitylog.git", from: "1.0.0"),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages which this package depends on.
         .target(
-            name: "XcodeResultBundle",
-            dependencies: []),
+            name: SWXCResult.name,
+            dependencies: ["SWXCActivityLog"]),
         .testTarget(
-            name: "XcodeResultBundleTests",
-            dependencies: ["XcodeResultBundle"]),
+            name: SWXCResult.name + "Tests",
+            dependencies: [.target(name: SWXCResult.name)]),
+    ],
+    swiftLanguageVersions: [
+        .v5
     ]
 )
