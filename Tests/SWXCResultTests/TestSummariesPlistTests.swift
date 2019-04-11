@@ -7,15 +7,12 @@ final class TestSummariesPlistTests: XCTestCase {
     func testCodable() throws {
         do {
             let bundleDirURL = try generateResultBundles()
+            let inputURL = bundleDirURL.appendingPathComponent("CleanAnalyzeTest.result")
 
-            let inputURL = bundleDirURL.appendingPathComponent("CleanAnalyzeTest.result").appendingPathComponent("Info.plist")
-            let inputData = try Data(contentsOf: inputURL)
-            let decoder = PropertyListDecoder()
-            let infoPlist = try decoder.decode(InfoPlist.self, from: inputData)
-
-            let testSummariesURL = URL(fileURLWithPath: infoPlist.TestSummaryPath!, isDirectory: false).standardized
-            let testSummariesData = try Data(contentsOf: testSummariesURL)
-            let testSummariesPlist = try decoder.decode(TestSummariesPlist.self, from: testSummariesData)
+            let xcresult = try XCResult(bundleURL: inputURL)
+            let infoPlist = xcresult.infoPlist
+            let testSummariesURL = try infoPlist.urlForTestSummary(relativeTo: inputURL)
+            let testSummariesPlist = try infoPlist.testSummary(relativeTo: inputURL)
 
             let encoder = PropertyListEncoder()
             encoder.outputFormat = .xml

@@ -7,4 +7,4 @@
 
 import Foundation
 
-typealias InfoPlist = SchemeActionsInvocationRecord
+public typealias InfoPlist = SchemeActionsInvocationRecord
