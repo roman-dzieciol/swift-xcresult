@@ -19,5 +19,12 @@ public final class TestSummariesPlist: Codable {
         self.FormatVersion = FormatVersion
         self.TestableSummaries = TestableSummaries
     }
+
+    public static func from(contentsOf url: URL) throws -> TestSummariesPlist {
+        let inputData = try Data(contentsOf: url)
+        let decoder = PropertyListDecoder()
+        return try decoder.decode(TestSummariesPlist.self, from: inputData)
+    }
+    
 }
 

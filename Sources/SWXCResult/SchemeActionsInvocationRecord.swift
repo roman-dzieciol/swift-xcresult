@@ -68,6 +68,19 @@ public final class SchemeActionsInvocationRecord: Codable {
         self.WarningSummaries = WarningSummaries
         self.archiveGUID = archiveGUID
     }
+
+    public func urlForTestSummary(relativeTo baseURL: URL) throws -> URL {
+        guard let TestSummaryPath = TestSummaryPath else {
+            throw XCResultError.testSummaryPathMissing
+        }
+        let url = URL(fileURLWithPath: TestSummaryPath)
+        return baseURL.appendingPathComponent(url.lastPathComponent)
+    }
+
+    public func testSummary(relativeTo baseURL: URL) throws -> TestSummariesPlist {
+        let url = try urlForTestSummary(relativeTo: baseURL)
+        return try TestSummariesPlist.from(contentsOf: url)
+    }
 }
 
 
