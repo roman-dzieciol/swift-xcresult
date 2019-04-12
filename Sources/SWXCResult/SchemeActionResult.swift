@@ -58,4 +58,8 @@ public final class SchemeActionResult: Codable {
         self.WarningCount = WarningCount
         self.WarningSummaries = WarningSummaries
     }
+
+    public func urlForTestSummary(relativeTo baseURL: URL) -> URL? {
+        return TestSummaryPath.flatMap({ baseURL.appendingPathComponent($0) })
+    }
 }
