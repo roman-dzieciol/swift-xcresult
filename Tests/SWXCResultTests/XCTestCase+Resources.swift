@@ -53,7 +53,7 @@ public func urlForSourceRoot() -> URL {
 
 
 public func urlForBundleDir() -> URL {
-    return Bundle.init(for: TestSummariesPlistTests.self).bundleURL.standardized.deletingLastPathComponent()
+    return Bundle.init(for: PlistTests.self).bundleURL.standardized.deletingLastPathComponent()
 }
 
 public func urlForResource(named name: String) -> URL {
