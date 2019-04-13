@@ -11,12 +11,14 @@ final class PlistTests: XCTestCase {
 
             let xcresult = try XCResult(bundleURL: inputURL)
             let infoPlist = xcresult.infoPlist
+            XCTAssertNotNil(xcresult.infoURL.baseURL)
             let infoOutputURL = urlForStoringInTempDir(url: xcresult.infoURL)
 
             try write(asPlist: infoPlist, url: infoOutputURL)
             XCTAssertTrue(try diff(url: xcresult.infoURL, with: infoOutputURL))
 
-            let testSummariesURL = try infoPlist.urlForTestSummary(relativeTo: inputURL)
+            let testSummariesURL = infoPlist.urlForTestSummary(relativeTo: inputURL)!
+            XCTAssertNotNil(testSummariesURL.baseURL)
             let testSummariesPlist = try infoPlist.testSummary(relativeTo: inputURL)
             let testSummariesOutputURL = urlForStoringInTempDir(url: testSummariesURL)
 
@@ -26,10 +28,23 @@ final class PlistTests: XCTestCase {
             try xcresult.infoPlist.Actions?.forEach { action in
                try [action.ActionResult, action.BuildResult].compactMap{ $0 }.forEach { result in
                     if let url = result.urlForTestSummary(relativeTo: inputURL) {
+                        XCTAssertNotNil(url.baseURL)
                         let summaries = try SchemeActionResultTestSummary.from(contentsOf: url)
                         let outputURL = urlForStoringInTempDir(url: url)
                         try write(asPlist: summaries, url: outputURL)
                         XCTAssertTrue(try diff(url: url, with: outputURL))
+
+                        if let logURL = result.urlForLogPath(relativeTo: bundleDirURL) {
+                            XCTAssertNotNil(logURL.baseURL)
+                        }
+
+                        if let codeCoverageURL = result.urlForCodeCoveragePath(relativeTo: bundleDirURL) {
+                            XCTAssertNotNil(codeCoverageURL.baseURL)
+                        }
+
+                        if let codeCoverageArchiveURL = result.urlForCodeCoverageArchivePath(relativeTo: bundleDirURL) {
+                            XCTAssertNotNil(codeCoverageArchiveURL.baseURL)
+                        }
                     }
                 }
             }
