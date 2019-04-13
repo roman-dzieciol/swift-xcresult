@@ -17,7 +17,7 @@ public final class XCResult {
 
     public init(bundleURL: URL) throws {
         self.bundleURL = bundleURL
-        infoURL = bundleURL.appendingPathComponent("Info.plist")
+        infoURL = URL(fileURLWithPath: "Info.plist", isDirectory: false, relativeTo: bundleURL)
 
         let inputData = try Data(contentsOf: infoURL)
         let decoder = PropertyListDecoder()

@@ -9,7 +9,6 @@ public final class SchemeActionResultTestSummary: Codable {
 
     public let TestableSummaries: [SchemeActionTestableSummary]
 
-
     public static func from(contentsOf url: URL) throws -> SchemeActionResultTestSummary {
         let inputData = try Data(contentsOf: url)
         let decoder = PropertyListDecoder()
